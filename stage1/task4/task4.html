@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <style>
+        *{margin: 0;padding: 0;}
+        .father{
+            width: 800px;
+            height:640px;
+            border: 1px solid #999;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;/*垂直居中*/
+        }
+        .son{width: 400px;
+            height: 200px;
+            background-color: #ccc;
+            margin:auto;}
+        .circle1{
+            width: 50px;
+            height: 50px;
+            background-color: #fc0;
+            -webkit-border-radius: 0 0 50px 0;
+        }
+        .circle2{
+            width:50px;
+            height: 50px;
+            background-color: #fc0;
+            -webkit-border-radius: 50px 0 0 0;
+            margin-left: 350px;
+            margin-top: 100px;
+        }
+    </style>
 </head>
 <body>
-ddddd
+    <div class="father">
+        <div class="son">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+    </div>
 </body>
 </html>
