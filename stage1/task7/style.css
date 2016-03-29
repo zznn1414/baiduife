@@ -1,0 +1,644 @@
+/*消除最初样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1278px;
+    /*margin: 0 auto;*/
+}
+/*以下是设置头部样式*/
+/*设置头部宽度和高度*/
+header{
+    width: 100%;
+    height: 57px;
+}
+/*设置头部第一张图片位置*/
+header #top1{
+    margin-left: 47px;
+}
+/*设置标题“新世界”样式以及位置*/
+header p{
+    font-family: "黑体";
+    font-size: 21px;
+    color: #393939;
+    margin-left:100px;
+    margin-top: -43px;
+}
+/*设置ul无序列表样式*/
+header ul{
+    list-style: none;
+    margin-left: 700px;
+    margin-top: -27px;
+}
+/*纵向列表变成横向*/
+header li{
+    float: left;
+}
+/*设置a里边的文字样式以及位置*/
+header a{
+    display: block;
+    width: 60px;
+    height: 44px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #393939;
+    text-decoration: none;
+    margin-right: 30px;
+    text-align: center;
+    background:url("images/top2.jpg");
+}
+/*设置头部第二张图片位置*/
+header #top2{
+    margin-top: -14px;
+}
+/*设置a点击时的样式*/
+.on,a:hover{
+    color: #EE4F53;
+    background-position: -10px 45px;
+}
+/*设置主体部分样式*/
+/*第一部分*/
+.one{
+    width: 1280px;
+    height:690px;
+}
+/*第一张图片位置*/
+.one img{
+    position: absolute;
+    left: 0;
+    z-index: 0;
+}
+/*为第一张图片添加带透明度的一层膜*/
+.one .inner{
+    width: 1280px;
+    height:690px;
+    background-color: black;
+    opacity:0.2;
+    position:absolute;
+    z-index:1;
+}
+/*第三层，文字层*/
+.one .inner2{
+    width: 1280px;
+    height:690px;
+    position:absolute;
+    z-index:2;
+}
+/*分别设置几行文字的字体样式位置等*/
+.one .inner2 #p1{
+    font-family: "微软雅黑";
+    font-size: 60px;
+    color: #ffffff;
+    padding-left: 116px;
+    padding-top: 215px;
+}
+.one .inner2 #p2{
+    font-family: "微软雅黑";
+    font-size: 21px;
+    color: #ffffff;
+    line-height: 32px;
+    margin-top: 8px;
+    padding-left: 125px;
+}
+/*设置button样式*/
+.one .inner2 button{
+    width: 330px;
+    height: 62px;
+    border: 1px solid #E8504F;
+    background-color: #E8504F;
+    font-family: "微软雅黑";
+    font-size: 30px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-left: 125px;
+    margin-top: 64px;
+}
+/*第二部分*/
+.two{
+    width: 1280px;
+    height: 250px;
+}
+/*设置表格位置*/
+.two table{
+    padding-top: 26px;
+}
+/*设置第一行样式*/
+.two table th{
+    width: 320px;
+    height: 100px;
+    text-align: center;
+}
+/*设置第二行样式*/
+.two table td{
+    width: 320px;
+    height: 55px;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #393939;
+}
+/*添加边框*/
+.two table .td2{
+    border-left: 2px solid #ABABAB;
+    border-right: 2px solid #ABABAB;
+}
+.two table .td3{
+    border-right: 2px solid #ABABAB;
+}
+/*第三部分*/
+.three{
+    width: 1280px;
+    height: 360px;
+    background-color: #EEECED;
+}
+/*设置图片位置*/
+.three img{
+    padding-left: 585px;
+    padding-top: 80px;
+}
+/*设置文字位置*/
+.three p{
+    font-family: "黑体";
+    font-size: 50px;
+    color: #A2A2A2;
+    padding-left: 215px;
+    margin-top: 35px;
+}
+/*第四部分*/
+.four{
+    width: 1280px;
+    height: 340px;
+}
+/*背景图片*/
+.four img{
+    position: absolute;
+    z-index: 3;
+}
+/*为背景图片添加带透明度的一层膜*/
+.four .inner3{
+    width: 1280px;
+    height: 340px;
+    background-color: red;
+    opacity:0.1;
+    position:absolute;
+    z-index:4;
+}
+/*文字层*/
+.four .inner4{
+    width: 1280px;
+    height:340px;
+    position:absolute;
+    z-index:5;
+}
+/*为文字添加样式*/
+.four .inner4 .p3{
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px;
+}
+/*添加分隔线*/
+.four .inner4 .fengexian{
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom:15px;
+}
+/*为文字添加样式*/
+.four .inner4 .p4{
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+}
+/*表单的排列顺序以及位置*/
+.four table{
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.four td{
+    padding-right: 30px;
+}
+.four select{
+    width: 237px;
+    height: 38px;
+}
+.four button{
+    width: 235px;
+    height: 36px;
+    font-family: "微软雅黑";
+    font-size: 15px;
+    color: #ffffff;
+    letter-spacing: 20px;
+    padding-left: 10px;
+    background-color: #BF4E48;
+    border:1px solid #BF4E48;
+}
+/*第五部分*/
+.five{
+    width: 1280px;
+    height: 605px;
+    background-color: #F8F8F8;
+}
+.five2{
+    margin-left: 150px;
+}
+#div51,#div52,#div53,#div54{
+    width: 220px;
+    height: 390px;
+    float: left;
+    margin-top: 100px;
+    margin-right: 36px;
+}
+#tp1,#tp2,#tp3,#tp4{
+    width: 220px;
+    height: 338px;
+    border: 1px solid #CDCDCD;
+    background-color: #ffffff;
+}
+.five img{
+    margin-top: 15px;
+    margin-left: 9px;
+}
+.five h3{
+    font-family: "黑体";
+    font-size: 22px;
+    color: #555555;
+    letter-spacing: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+.five h4{
+    font-family: "微软雅黑";
+    font-size: 15px;
+    color: #555555;
+    text-align: center;
+    margin-top: 10px;
+}
+.five p{
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #555555;
+    text-align: center;
+    margin-top: 8px;
+}
+.five .p51{
+    margin-bottom: 10px;
+}
+/*第六部分*/
+.six{
+    width: 1280px;
+    height: 565px;
+}
+.six .div61{
+    width: 851px;
+    height: 565px;
+    float:left;
+    background-image: url("images/img6.jpg");
+}
+.six .div61 .p61{
+    font-family: "黑体";
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 132px;
+}
+.six .div61 .p62{
+    font-family: "微软雅黑";
+    font-size: 150px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: -40px;
+}
+.six .div61 .p63{
+    font-family: "黑体";
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+}
+.six .div61 .p64{
+    font-family: "微软雅黑";
+    font-size: 21px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: -30px;
+}
+.six .div62{
+    width: 295px;
+    height: 285px;
+    float:right;
+    margin-right: 68px;
+}
+.six .div62 .p65{
+    font-family: "黑体";
+    font-size: 21px;
+    color: #353535;
+    text-align: center;
+    margin-top: 165px;
+}
+.six .div62 .p65 span{
+    color: #E05349;
+}
+.six .div62 .p66{
+    font-family: "黑体";
+    font-size: 12px;
+    color: #BABABA;
+    text-align: left;
+    line-height: 30px;
+    margin-top: 20px;
+}
+.six .div62 button{
+    width: 106px;
+    height: 32px;
+    background-color: #ffffff;
+    border: 1px solid #E4656E;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color:#E4656E;
+    margin-top: 45px;
+    margin-left: 93px;
+}
+/*第七部分*/
+.seven{
+    width: 1280px;
+    height: 521px;
+}
+.seven .div71{
+    width: 426px;
+    height: 521px;
+    background-color: #E8504F;
+}
+.seven .div71 p{
+    font-family: "黑体";
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 30px;
+    text-align: center;
+    padding-top: 172px;
+}
+.seven .div71 .fengexian1{
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.seven .div71 button{
+    width: 170px;
+    height: 43px;
+    background-color: #E8504F;
+    font-family: "黑体";
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    font-size: 22px;
+    margin-left: 130px;
+    margin-top: 10px;
+}
+.seven .div72{
+    width: 426px;
+    height: 521px;
+    margin-top: -521px;
+    margin-left: 426px;
+}
+.seven .div72 p{
+    font-family: "黑体";
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    padding-top: 172px;
+}
+.seven .div72 .fengexian2{
+    width: 30px;
+    height: 2px;
+    background-color: #A7A7A7;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.seven .div72 button{
+    width: 170px;
+    height: 43px;
+    font-family: "黑体";
+    color: #E8504F;
+    background-color: #ffffff;
+    border: 1px solid #E8504F;
+    font-size: 22px;
+    margin-left: 130px;
+    margin-top: 10px;
+}
+.seven .div73{
+    float: right;
+    margin-top: -521px;
+}
+.seven .div73 .div730{
+    width: 429px;
+    height: 521px;
+    background-color: black;
+    margin-top: -521px;
+    opacity:0.4;
+}
+/*第8部分*/
+.eight{
+    width: 1280px;
+    height: 750px;
+}
+.eight .div80{
+    font-family: "黑体";
+    font-size: 20px;
+    color: #363636;
+    text-align: center;
+    padding-top: 116px;
+}
+.eight .div81{
+    width: 30px;
+    height: 2px;
+    background-color: #E44F4B;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+.eight .div82{
+    font-family: "微软雅黑";
+    font-size: 13px;
+    color: #A3A3A3;
+    line-height: 18px;
+    text-align: center;
+    margin-top: -8px;
+}
+.eight .eight21{
+    width: 296px;
+    height: 285px;
+    margin-top: 106px;
+    margin-left: 90px;
+}
+.eight .eight21 .div83{
+    font-family: "黑体";
+    font-size: 15px;
+    color: #686465;
+}
+.eight .eight21 .div84{
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #A3A3A3;
+    line-height: 24px;
+    margin-top: 20px;
+}
+.eight .eight21 .div85{
+    font-family: "黑体";
+    font-size: 8px;
+    color: #A3A3A3;
+    margin-left: 265px;
+}
+.eight .eight21 .div86{
+    font-family: "黑体";
+    font-size: 15px;
+    color: #686465;
+    margin-top: 36px;
+}
+.eight .eight21 .div87{
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #A3A3A3;
+    line-height: 24px;
+    margin-top: 20px;
+}
+.eight .eight21 .div88{
+    font-family: "黑体";
+    font-size: 8px;
+    color: #A3A3A3;
+    margin-left: 265px;
+}
+.eight .eight21 .div89{
+    font-family: "黑体";
+    font-size: 15px;
+    color: #686465;
+    margin-top: 16px;
+}
+.eight .eight21 .div90{
+    font-family: "黑体";
+    font-size: 8px;
+    color: #A3A3A3;
+    margin-left: 265px;
+}
+.eight .eight22{
+    width: 642px;
+    height: 285px;
+    float: right;
+    margin-top: -285px;
+    margin-right: 141px;
+}
+.eight .eight22 form input{
+    width: 295px;
+    height: 40px;
+    background-color: #EDEDEF;
+    border: 1px solid #EDEDEF;
+    font-family:"宋体";
+    color: #6B696A;
+    padding-left: 15px;
+}
+.eight .eight22 form .in1,.in3{
+    margin-left: -43px;
+}
+.eight .eight22 form .in2,.in4{
+    margin-left: 9px;
+}
+.eight .eight22 form .in3,.in4{
+    margin-top: 16px;
+}
+.eight .eight22 form textarea{
+    width: 625px;
+    height: 110px;
+    background-color: #EDEDEF;
+    margin-left: -44px;
+    margin-top: 16px;
+    font-family:"宋体";
+    color: #6B696A;
+    padding-left: 15px;
+    padding-top: 10px;
+    border: 1px solid #EDEDEF;
+}
+.eight .eight22 form button{
+    width: 644px;
+    height: 40px;
+    margin-left: -45px;
+    font-family:"黑体";
+    font-size: 14px;
+    color: #363638;
+    background-color: #EDEDEF;
+    border: 1px solid #EDEDEF;
+    margin-top: 16px;
+}
+/*第九部分*/
+.nine{
+    width:1280px;
+    height: 357px;
+    background-color: #33363F;
+}
+.nine .nine1{
+    font-family: "黑体";
+    font-size: 22px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 90px;
+}
+.nine .nine2{
+    font-family: "仿宋";
+    font-size: 13px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+}
+.nine input{
+    width: 415px;
+    height: 42px;
+    margin-left: 386px;
+    margin-top: 30px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #A5A5A5;
+    border: 1px solid #ffffff;
+    padding-left: 15px;
+}
+.nine button{
+    width: 80px;
+    height: 43px;
+    font-family: "黑体";
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #717179;
+    border: 1px solid #717179;
+    margin-left: -8px;
+}
+.nine img{
+    margin-top: 35px;
+}
+.nine .im1{
+    margin-left: 550px;
+}
+/*网页底部*/
+footer{
+    width:1280px;
+    height: 60px;
+    background-color: #30303A;
+}
+footer .f1{
+    font-family: "宋体";
+    font-size: 12px;
+    color: #ffffff;
+    padding-left: 100px;
+    padding-top: 30px;
+}
+footer .f2{
+    float: right;
+    font-family: "宋体";
+    font-size: 12px;
+    color: #ffffff;
+    margin-top: -10px;
+    margin-right: 40px;
+}
