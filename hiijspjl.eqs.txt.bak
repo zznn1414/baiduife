@@ -1,0 +1,15 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch gh-pages
+# Your branch is up-to-date with 'origin/gh-pages'.
+#
+# Changes to be committed:
+#	new file:   stage1/task5/images/img1.jpg
+#	new file:   stage1/task5/images/img2.jpg
+#	new file:   stage1/task5/images/top1.png
+#	new file:   stage1/task5/style.css
+#	new file:   stage1/task5/task5.html
+#
+
