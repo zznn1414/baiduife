@@ -16,9 +16,7 @@
              在事件处理函数中
              获取aqi-input输入的值，并显示在aqi-display中
              */
-            var air=document.getElementById("aqi-input").value;
-            var output=document.getElementById("aqi-display");
-            output=document.write("您输入的值是："+air);
+            document.getElementById("aqi-display").innerText = document.getElementById("aqi-input").value;
         };
     </script>
 </body>
