@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 300px;
+    border: 1px solid #000;
+    margin: 100px auto 0;
+}
+.b{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 470px;
+    height: 260px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.c{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 470px;
+    height: 260px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+.d{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    height: 210px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.e{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    height: 210px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+.f{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    height: 210px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.g{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    height: 210px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+.h{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.i{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+.j{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.k{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+.l{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.m{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+.n{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.o{
+    width: 75px;
+    height: 160px;
+    border: 1px solid #000;
+    margin-right: 20px;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin:100px auto 0;
+}
+.btn{
+    width:100px;
+    height: 50px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    border-radius: 10px;
+    outline: none;
+}
