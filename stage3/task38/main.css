@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.createTable{
+    width: 146px;
+    height: 46px;
+    border: 2px solid #202020;
+    background-color: #666666;
+    font-family:"微软雅黑";
+    font-size: 18px;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor:pointer;
+    outline:none;
+    position: absolute;
+    z-index: 1;
+}
+table{
+    font-family: "黑体";
+    font-size: 22px;
+    text-align: center;
+    width: 816px;
+    position: absolute;
+    z-index: 3;
+    top: 30px;
+    left: 50%;
+    margin-left: -410px;
+    border-right:2px solid #CFCFCF;
+    border-bottom:2px solid #CFCFCF;
+    border-collapse: collapse;
+}
+th{
+    height: 55px;
+    background-color: #333333;
+    color: #ffffff;
+    border-left:2px solid #CFCFCF;
+    border-top:2px solid #CFCFCF;
+    border-collapse: collapse;
+}
+td{
+    height: 40px;
+    border-left:2px solid #CFCFCF;
+    border-top:2px solid #CFCFCF;
+    border-collapse: collapse;
+}

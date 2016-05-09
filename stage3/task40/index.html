@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task40</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="JQuery/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <label>请输入日期：<input type="text" id="dateText"></label>
+    <div id="calender">
+        <form id="form">
+            <input type="button" id="lastMonth" value="<">
+            <select id="selectYear"></select>
+            <select id="selectMonth"></select>
+            <input type="button" id="btnToday" value="返回今天">
+            <input type="button" id="nextMonth" value=">">
+        </form>
+        <table id="table">
+            <tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="calender.js"></script>
+</body>
+</html>

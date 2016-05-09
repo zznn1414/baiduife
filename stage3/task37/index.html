@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI组件之浮出层</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<!--背景层-->
+<div class="back" id="back">
+    <p class="p1">第一段</p>
+    <p class="p2">第二段</p>
+    <p class="p3">第三段</p>
+</div>
+<!--触发按钮-->
+<input type="button" value="弹出浮出层" class="btn" id="btn">
+<!--浮出层部分-->
+<div class="surface" id="surface">
+    <!--头部-->
+    <div class="surfaceTop" id="surfaceTop">
+        <!--头部标题-->
+        <p class="surfaceTitle">这是一个浮出层</p>
+    </div>
+    <!--内容-->
+    <p class="surfaceContent">这是一个浮出层</p>
+    <!--按钮-->
+    <div class="surfaceBtn">
+        <input class="btn01" id="confirm" type="button" value="确定">
+        <input class="btn01" id="cancel" type="button" value="取消">
+    </div>
+</div>
+<script src="surface.js"></script>
+</body>
+</html>
