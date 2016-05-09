@@ -16,6 +16,7 @@ function insertImg(imgNum){
     for(var i=0;i<imgNum;i++){
         var div=document.createElement("div");
         div.setAttribute("id","layout_"+(i+1));
+        div.setAttribute("class","");
         for(var j= 0;j<imgNum;j++){
             var img=document.createElement("img");
             img.setAttribute("id","items_"+(j+1));
@@ -30,11 +31,6 @@ function insertImages(layNum){
         insertImg(i);
     }
 }
-
-function layout(){
-
-}
-
 function init(){
     insertImages(6);
 }

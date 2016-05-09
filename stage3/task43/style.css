@@ -1,29 +1,122 @@
+/*清空默认样式*/
 *{
     margin: 0;
     padding: 0;
 }
+/*设置所有图片大小*/
+img{
+    width: 600px;
+    height: 400px;
+}
+/*所有布局整个div样式*/
+#layout_1,#layout_2,#layout_3,#layout_4,#layout_5,#layout_6{
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin-bottom: 5px;
+}
+/*一张图片布局样式*/
+#layout_1 img{
+    position: absolute;
+    object-fit: cover;/*元素填满内容区*/
+    overflow: hidden;/*元素溢出内容区时隐藏*/
+}
+/*两张图片布局样式*/
 #layout_2 #items_1{
     -webkit-clip-path: polygon(0% 0%, 66.66% 0%, 33.33% 100%,0% 100%);
-    -moz-clip-path: polygon(0% 0%, 66.66% 0%, 33.33% 100%,0% 100%);
-    -ms-clip-path: polygon(0% 0%, 66.66% 0%, 33.33% 100%,0% 100%);
     clip-path: polygon(0% 0%, 66.66% 0%, 33.33% 100%,0% 100%);
     position: absolute;
 }
 #layout_2 #items_2{
     -webkit-clip-path: polygon(66.66% 0%, 100% 0%, 100% 100%,33.33% 100%);
-    -moz-clip-path: polygon(66.66% 0%, 100% 0%, 100% 100%,33.33% 100%);
-    -ms-clip-path: polygon(66.66% 0%, 100% 0%, 100% 100%,33.33% 100%);
     clip-path: polygon(66.66% 0%, 100% 0%, 33.33% 100%,0% 100%);
 }
+/*三张图片布局样式*/
 #layout_3 #items_1{
     -webkit-clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
-    -moz-clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
-    -ms-clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
     clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
 }
-#layout_3 #items_2,#items_3{
-    -webkit-clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
-    -moz-clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
-    -ms-clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
-    clip-path: polygon(0% 0%, 66.66% 0%, 66.66% 100%,0% 100%);
+#layout_3 #items_2{
+    width: 33.33%;
+    height: 50%;
+    position: absolute;
+    margin-left: -33.33%;
+}
+#layout_3 #items_3{
+    width: 33.33%;
+    height: 50%;
+    margin-left: -33.33%;
+}
+/*四张图片布局样式*/
+#layout_4 img {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+/*五张图片布局样式*/
+#layout_5 #items_1{
+    width: 66.66%;
+    height: 66.66%;
+}
+#layout_5 #items_2{
+    width:33.33%;
+    height:50%;
+    position: absolute;
+}
+#layout_5 #items_3{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+}
+#layout_5 #items_4{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 33.33%;
+}
+#layout_5 #items_5{
+    width: 33.33%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+}
+/*六张图片布局样式*/
+#layout_6 #items_1{
+    width: 66.66%;
+    height: 66.66%;
+}
+#layout_6 #items_2{
+    width:33.33%;
+    width:33.33%;
+    position: absolute;
+}
+#layout_6 #items_3{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 33.33%;
+}
+#layout_6 #items_4{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+}
+#layout_6 #items_5{
+    width: 33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 33.33%;
+}
+#layout_6 #items_6{
+    width: 33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 66.66%;
 }
