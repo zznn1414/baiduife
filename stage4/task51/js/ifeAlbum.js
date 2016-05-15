@@ -46,20 +46,51 @@
         // 你的实现
 
         /*页面添加标签，并添加内容*/
-        var body=document.body;
-        var main=document.createElement("div");
-        main.setAttribute("id","main");
-        body.appendChild(main);
+        var main=document.getElementById("main");
+        var gallery=document.createElement("div");
+        gallery.id="gallery";
+        main.appendChild(gallery);
         for(var i=0;i<image.length;i++){
             var picture=document.createElement("div");
-            picture.setAttribute("class","picture");
-            main.appendChild(picture);
+            picture.className="picture";
+            gallery.appendChild(picture);
             var img=document.createElement("img");
-            img.setAttribute("src",image[i]);
+            img.src=image[i];
             picture.appendChild(img);
         }
 
+        /*图片预加载函数*/
+        var preLoadImages=function(image){
+            var newImages=[],loadedImages=0;
+            var postAction=function(){};
+            var arr=(typeof image!="object")?[image]:image;//确保参数总是数组
+            function imageLoadPost(){
+                loadedImages++;
+                if(loadedImages==arr.length){
+                    postAction(newImages);
+                }
+            }
+            for(var i=0;i<arr.length;i++){
+                newImages[i]=new Image();
+                newImages[i].src=image[i];
+                newImages[i].onload=function(){
+                    imageLoadPost();
+                };
+                newImages[i].onerror=function(){
+                    imageLoadPost();
+                }
+            }
+            return {
+                done:function(f){
+                    postAction=f||postAction;
+                }
+            }
+        };
 
+        /*调用设置相册布局对象*/
+        preLoadImages(image).done(function(){
+            IfeAlbum.prototype.setLayout(2);
+        });
 
     };
 
@@ -71,8 +102,6 @@
      * @return {HTMLElement[]} 相册所有图像对应的 DOM 元素组成的数组
      */
     IfeAlbum.prototype.getImageDomElements = function() {
-
-        return $(".picture");
 
     };
 
@@ -105,8 +134,55 @@
      * @param {number} layout 布局值，IfeAlbum.LAYOUT 中的值
      */
     IfeAlbum.prototype.setLayout = function (layout) {
+        if(layout==1){
 
-        if(layout==2){
+        }
+
+        else if(layout==2){
+
+            /*通过父级和子元素的class类 获取该同类子元素的数组*/
+            var getClassObj=function(parent,className){
+                var obj=parent.getElementsByTagName('*');
+                var pinS=[];
+                for(var i=0;i<obj.length;i++){
+                    if(obj[i].className==className){
+                        pinS.push(obj[i]);
+                    }
+                }
+                return pinS;
+            };
+            /*获取 pin高度 最小值的索引index*/
+            var getMinHIndex=function(arr,minH){
+                for(var i in arr){
+                    if(arr[i]==minH){
+                        return i;
+                    }
+                }
+            };
+            /*瀑布布局*/
+            var main=document.getElementById("main");
+            var oParent=document.getElementById("gallery");//父级对象
+            var oPin=getClassObj(oParent,'picture');//获取存储块框的数组oPin
+            var oPinW=oPin[0].offsetWidth;//一个块框的宽
+            var num=Math.floor(main.offsetWidth/oPinW);//每行中容纳块框个数
+            oParent.style.cssText="width:"+oPinW*num+"px;margin:0 auto";//设置父级元素居中样式，定宽
+            var pinHArr=[];//用于存储每列中的所有块框相加的高度
+            for(var i=0;i<oPin.length;i++){
+                if(i<num){
+                    pinHArr.push(oPin[i].offsetHeight);
+                }else {
+                    var minH=Math.min.apply(null,pinHArr);
+                    var minHIndex=getMinHIndex(pinHArr,minH);
+                    oPin[i].style.position="absolute";
+                    oPin[i].style.top=minH+'px';
+                    oPin[i].style.left=oPin[minHIndex].offsetLeft+'px';
+                    pinHArr[minHIndex]+=oPin[i].offsetHeight;
+                }
+            }
+
+        }
+
+        else if(layout==3){
 
         }
 
