@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+label{
+    font-family: "微软雅黑";
+    display: block;
+    margin-top: 30px;
+    margin-left: 530px;
+}
+#dateText{
+    font-family: "微软雅黑";
+    font-size: 16px;
+    width: 200px;
+    height: 20px;
+}
+#calender{
+    width: 358px;
+    height: 273px;
+    margin: 10px auto 0;
+}
+#form{
+    line-height: 45px;
+    text-align: center;
+    border: 2px solid #59ACFF;
+    border-bottom: none;
+}
+#lastMonth, #nextMonth{
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #CCC;
+}
+#selectYear,#btnToday{
+    width: 75px;
+    height: 25px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #CCC;
+}
+#selectMonth{
+    width: 60px;
+    height: 25px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #CCC;
+}
+table{
+    font-family: "微软雅黑";
+    width:358px;
+    border: 2px solid #59ACFF;
+}
+th{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+td{
+    font-style: italic;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #59ACFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+

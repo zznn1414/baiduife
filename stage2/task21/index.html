@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task21</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+        .form{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        label{
+            font-size: 24px;
+        }
+        #tag-text{
+            font-size: 16px;
+            font-weight: bold;
+            width: 215px;
+            height: 25px;
+            border: 1px none #76AEEB;
+            box-shadow: 0 0 3px 3px #76AEEB;
+            margin-left: 8px;
+        }
+        #tag-queue{
+            margin-top: 20px;
+            list-style: none;
+            font-size: 24px;
+            color: #fff;
+            overflow: hidden;
+        }
+        #tag-queue li{
+            margin-right: 10px;
+            padding: 2px 5px;
+            width: auto;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            background-color: #8CC8FA;
+            float: left;
+        }
+        #hobby-text{
+            margin-top: 60px;
+            font-size: 16px;
+            position: absolute;
+
+        }
+        #hobby-btn{
+            width: 120px;
+            height: 25px;
+            background-color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 5px;
+            outline:none;
+            margin-top: 150px;
+        }
+        #hobby-queue{
+            list-style: none;
+            font-size: 24px;
+            color: #fff;
+            overflow: hidden;
+        }
+        #hobby-queue li{
+            margin-top: 5px;
+            margin-right: 10px;
+            padding: 2px 5px;
+            width: auto;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            background-color: #FCD089;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<form class="form" action="#">
+    <label>Tag:</label><input type="text" id="tag-text">
+    <ul id="tag-queue">
+
+    </ul>
+    <textarea id="hobby-text" rows="5" cols="50"></textarea><br>
+    <input type="button" id="hobby-btn" value="确认兴趣爱好">
+    <ul id="hobby-queue">
+
+    </ul>
+</form>
+<script type="text/javascript" src="task.js"></script>
+</body>
+</html>

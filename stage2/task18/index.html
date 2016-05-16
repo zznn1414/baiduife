@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task18</title>
+    <style type="text/css">
+        #left-out{
+            margin-left: 30px;
+        }
+        #queue{
+            list-style: none;
+            margin-left: -40px;
+        }
+        #queue li{
+            font-family: "微软雅黑";
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            float: left;
+            width:40px;
+            height: 35px;
+            border: 1px solid red;
+            background-color: red;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <input type="text" id="number">
+    <input type="button"  id="left-in" value="左侧入">
+    <input type="button"  id="right-in" value="右侧入">
+    <input type="button"  id="left-out" value="左侧出">
+    <input type="button"  id="right-out" value="右侧出">
+</form>
+<ul id="queue">
+</ul>
+<script src="task.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+/*清除所有默认样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*背景层样式*/
+#back{
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+/*段落*/
+.p1{
+    font-family:"微软雅黑" ;
+    font-size: 18px;
+    color: red;
+    text-indent: 10px;
+    margin-top: 700px;
+}
+.p2{
+    font-family:"微软雅黑" ;
+    font-size: 18px;
+    color: red;
+    text-indent: 10px;
+    margin-top: 300px;
+}
+.p3{
+    font-family:"微软雅黑" ;
+    font-size: 18px;
+    color: red;
+    text-indent: 10px;
+    margin-top: 300px;
+}
+/*触发按钮*/
+.btn{
+    width: 146px;
+    height: 46px;
+    border: 2px solid #202020;
+    background-color: #666666;
+    font-family:"微软雅黑";
+    font-size: 18px;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor:pointer;
+    outline:none;
+    position: absolute;
+    z-index: 1;
+}
+/*浮出层*/
+.surface{
+    width:596px;
+    height:296px;
+    border: 2px solid #202020;
+    background-color: #FEFEFE;
+    position: absolute;
+    z-index: 2;
+    top:100px;
+    left: 50%;
+    top:50%;
+    margin-left: -300px;
+    margin-top: -150px;
+    /*默认隐藏*/
+    display: none;
+    position: fixed;
+}
+/*浮出层头部*/
+.surfaceTop{
+    height: 50px;
+    border-bottom: 2px solid #202020;
+    background-color: #666666;
+    cursor: move;
+}
+/*浮出层头部标题*/
+.surfaceTitle{
+    font-family:"微软雅黑" ;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 50px;
+    margin-left: 20px;
+}
+/*浮出层内容*/
+.surfaceContent{
+    font-family:"微软雅黑" ;
+    font-size: 18px;
+    text-indent: 20px;
+    margin-top: 20px;
+}
+/*浮出层按钮位置*/
+.surfaceBtn{
+    margin-top: 140px;
+    margin-left: 280px;
+}
+/*浮出层按钮样式*/
+.btn01{
+    width: 146px;
+    height: 46px;
+    border: 2px solid #202020;
+    background-color: #666666;
+    font-family:"微软雅黑";
+    font-size: 18px;
+    color: #ffffff;
+    cursor:pointer;
+}
