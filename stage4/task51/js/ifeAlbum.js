@@ -25,6 +25,54 @@
     // 私有变量可以写在这里
     // var xxx = ...
 
+    /*图片预加载函数*/
+    var preLoadImages=function(image){
+        var newImages=[],loadedImages=0;
+        var postAction=function(){};
+        var arr=(typeof image!="object")?[image]:image;//确保参数总是数组
+        function imageLoadPost(){
+            loadedImages++;
+            if(loadedImages==arr.length){
+                postAction(newImages);
+            }
+        }
+        for(var i=0;i<arr.length;i++){
+            newImages[i]=new Image();
+            newImages[i].src=image[i];
+            newImages[i].onload=function(){
+                imageLoadPost();
+            };
+            newImages[i].onerror=function(){
+                imageLoadPost();
+            }
+        }
+        return {
+            done:function(f){
+                postAction=f||postAction;
+            }
+        }
+    };
+
+    /*通过父级和子元素的class类 获取该同类子元素的数组*/
+    var getClassObj=function(parent,className){
+        var obj=parent.getElementsByTagName('*');
+        var pinS=[];
+        for(var i=0;i<obj.length;i++){
+            if(obj[i].className==className){
+                pinS.push(obj[i]);
+            }
+        }
+        return pinS;
+    };
+    /*获取 pin高度 最小值的索引index,主要应用于瀑布布局*/
+    var getMinHIndex=function(arr,minH){
+        for(var i in arr){
+            if(arr[i]==minH){
+                return i;
+            }
+        }
+    };
+
     /************* 以下是本库提供的公有方法 *************/
 
 
@@ -47,45 +95,14 @@
 
         /*页面添加标签，并添加内容*/
         var main=document.getElementById("main");
-        var gallery=document.createElement("div");
-        gallery.id="gallery";
-        main.appendChild(gallery);
+        var gallery="<div id='gallery'>";
         for(var i=0;i<image.length;i++){
-            var picture=document.createElement("div");
-            picture.className="picture";
-            gallery.appendChild(picture);
-            var img=document.createElement("img");
-            img.src=image[i];
-            picture.appendChild(img);
+            gallery+="<div class='picture'>";
+            gallery+="<img src="+image[i]+">";
+            gallery+="</div>";
         }
-
-        /*图片预加载函数*/
-        var preLoadImages=function(image){
-            var newImages=[],loadedImages=0;
-            var postAction=function(){};
-            var arr=(typeof image!="object")?[image]:image;//确保参数总是数组
-            function imageLoadPost(){
-                loadedImages++;
-                if(loadedImages==arr.length){
-                    postAction(newImages);
-                }
-            }
-            for(var i=0;i<arr.length;i++){
-                newImages[i]=new Image();
-                newImages[i].src=image[i];
-                newImages[i].onload=function(){
-                    imageLoadPost();
-                };
-                newImages[i].onerror=function(){
-                    imageLoadPost();
-                }
-            }
-            return {
-                done:function(f){
-                    postAction=f||postAction;
-                }
-            }
-        };
+        gallery+="</div>";
+        main.innerHTML=gallery;
 
         /*调用设置相册布局对象*/
         preLoadImages(image).done(function(){
@@ -102,6 +119,9 @@
      * @return {HTMLElement[]} 相册所有图像对应的 DOM 元素组成的数组
      */
     IfeAlbum.prototype.getImageDomElements = function() {
+
+        var oParent=document.getElementById("gallery");//父级对象
+        return getClassObj(oParent,'picture');//获取存储块框的数组
 
     };
 
@@ -140,31 +160,11 @@
 
         else if(layout==2){
 
-            /*通过父级和子元素的class类 获取该同类子元素的数组*/
-            var getClassObj=function(parent,className){
-                var obj=parent.getElementsByTagName('*');
-                var pinS=[];
-                for(var i=0;i<obj.length;i++){
-                    if(obj[i].className==className){
-                        pinS.push(obj[i]);
-                    }
-                }
-                return pinS;
-            };
-            /*获取 pin高度 最小值的索引index*/
-            var getMinHIndex=function(arr,minH){
-                for(var i in arr){
-                    if(arr[i]==minH){
-                        return i;
-                    }
-                }
-            };
             /*瀑布布局*/
-            var main=document.getElementById("main");
             var oParent=document.getElementById("gallery");//父级对象
-            var oPin=getClassObj(oParent,'picture');//获取存储块框的数组oPin
+            var oPin=IfeAlbum.prototype.getImageDomElements();
             var oPinW=oPin[0].offsetWidth;//一个块框的宽
-            var num=Math.floor(main.offsetWidth/oPinW);//每行中容纳块框个数
+            var num=Math.floor(oParent.offsetWidth/oPinW);//每行中容纳块框个数
             oParent.style.cssText="width:"+oPinW*num+"px;margin:0 auto";//设置父级元素居中样式，定宽
             var pinHArr=[];//用于存储每列中的所有块框相加的高度
             for(var i=0;i<oPin.length;i++){
@@ -179,7 +179,8 @@
                     pinHArr[minHIndex]+=oPin[i].offsetHeight;
                 }
             }
-
+            //可以全屏预览
+            IfeAlbum.prototype.enableFullscreen();
         }
 
         else if(layout==3){
@@ -217,6 +218,32 @@
      * 允许点击图片时全屏浏览图片
      */
     IfeAlbum.prototype.enableFullscreen = function () {
+
+        var images=document.getElementsByTagName("img");
+        var fullScreen=document.getElementById("fullScreen");
+        var left=document.getElementById("left");
+        var right=document.getElementById("right");
+        for(var i=0;i<images.length;i++){
+            images[i].onclick=function(event){
+                event = event||window.event;
+                var target = document.elementFromPoint(event.clientX, event.clientY);
+                showBig(target.src);
+            };
+        }
+        function showBig(src){
+            fullScreen.getElementsByTagName("img")[0].src = src;
+            fullScreen.style.display = "block";
+        }
+        fullScreen.onclick = function (){
+            left.onclick=function(){
+
+            };
+            right.onclick=function(){
+
+            };
+            fullScreen.style.display = "none";
+        };
+
 
     };
 
