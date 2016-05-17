@@ -219,8 +219,9 @@
      */
     IfeAlbum.prototype.enableFullscreen = function () {
 
-        var images=document.getElementsByTagName("img");
+        var images=document.getElementById("main").getElementsByTagName("img");
         var fullScreen=document.getElementById("fullScreen");
+        var curImg=fullScreen.getElementsByTagName("img")[0];
         var left=document.getElementById("left");
         var right=document.getElementById("right");
         for(var i=0;i<images.length;i++){
@@ -231,19 +232,28 @@
             };
         }
         function showBig(src){
-            fullScreen.getElementsByTagName("img")[0].src = src;
+            curImg.src = src;
             fullScreen.style.display = "block";
         }
-        fullScreen.onclick = function (){
-            left.onclick=function(){
-
-            };
-            right.onclick=function(){
-
-            };
+        curImg.onclick = function (){
             fullScreen.style.display = "none";
         };
-
+        left.onclick=function(){
+            for(var i=0;i<images.length;i++){
+                if(curImg.src==images[i].src){
+                    fullScreen.style.display = "block";
+                    curImg.src=images[i-1].src;
+                }
+            }
+        };
+        right.onclick=function(){
+            for(var i=images.length-1;i>=0;i--){
+                if(curImg.src==images[i].src){
+                    fullScreen.style.display = "block";
+                    curImg.src=images[i+1].src;
+                }
+            }
+        };
 
     };
 

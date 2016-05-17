@@ -69,6 +69,7 @@ aside label{
     height: 600px;
     margin-top: 20px;
     border: 2px solid #fff;
+    cursor: pointer;
 }
 #fullScreen #left,#fullScreen #right{
     width: 50px;
