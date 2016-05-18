@@ -6,6 +6,8 @@ header{
     width: 100%;
     height: 60px;
     background-color: #222;
+    position: fixed;
+    z-index: 1;
 }
 header h1{
     font-family: "Gisha";
@@ -16,8 +18,9 @@ header h1{
 }
 main{
     width: 1000px;
+    height:auto;
     float: left;
-    margin-top: 20px;
+    margin-top: 80px;
     margin-left: 50px;
 }
 aside{
@@ -26,7 +29,7 @@ aside{
     float: right;
     border: 2px solid #222;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 80px;
     margin-right: 50px;
 }
 aside input{
@@ -39,6 +42,10 @@ aside input{
     color: #fff;
     margin-top: 10px;
     margin-left: 20px;
+    cursor: pointer;
+}
+#imgNum{
+    cursor: text;
 }
 aside label{
     display: block;
@@ -50,6 +57,7 @@ aside label{
 }
 #fullScreen{
     position: fixed;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
@@ -94,19 +102,8 @@ aside label{
 
 
 
-/*瀑布布局*/
-#gallery{
-    position: relative;
-}
-.picture{
-    padding: 10px;
-    border: 1px solid #CCC;
-    border-radius: 5px;
-    box-shadow: 0 0 6px #CCC;
-    float: left;
-}
-.picture img{
-    width: 165px;
-    height: auto;
-    cursor: pointer;
-}
+
+
+
+
+

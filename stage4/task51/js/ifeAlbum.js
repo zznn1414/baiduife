@@ -25,11 +25,19 @@
     // 私有变量可以写在这里
     // var xxx = ...
 
-    /*图片预加载函数*/
-    var preLoadImages=function(image){
+
+    /************* 以下是本库提供的公有方法 *************/
+
+
+    /**
+     * 图片预加载
+     * @param {(string|string[])} image  一张图片的 URL 或多张图片 URL 组成的数组
+     */
+    IfeAlbum.prototype.preLoadImages=function(image){
         var newImages=[],loadedImages=0;
         var postAction=function(){};
-        var arr=(typeof image!="object")?[image]:image;//确保参数总是数组
+        //确保参数总是数组
+        var arr=(typeof image!="object")?[image]:image;
         function imageLoadPost(){
             loadedImages++;
             if(loadedImages==arr.length){
@@ -53,29 +61,6 @@
         }
     };
 
-    /*通过父级和子元素的class类 获取该同类子元素的数组*/
-    var getClassObj=function(parent,className){
-        var obj=parent.getElementsByTagName('*');
-        var pinS=[];
-        for(var i=0;i<obj.length;i++){
-            if(obj[i].className==className){
-                pinS.push(obj[i]);
-            }
-        }
-        return pinS;
-    };
-    /*获取 pin高度 最小值的索引index,主要应用于瀑布布局*/
-    var getMinHIndex=function(arr,minH){
-        for(var i in arr){
-            if(arr[i]==minH){
-                return i;
-            }
-        }
-    };
-
-    /************* 以下是本库提供的公有方法 *************/
-
-
 
     /**
      * 初始化并设置相册
@@ -93,23 +78,24 @@
 
         // 你的实现
 
-        /*页面添加标签，并添加内容*/
-        var main=document.getElementById("main");
+        //页面添加标签，并添加内容
         var gallery="<div id='gallery'>";
         for(var i=0;i<image.length;i++){
-            gallery+="<div class='picture'>";
+            gallery+="<div class='pic'>";
             gallery+="<img src="+image[i]+">";
+            gallery+="<input type='checkbox' class='checkbox' name="+i+" style='width:20px;height:20px;position:absolute;top: 0;margin-left: -10px;display: none'>";
             gallery+="</div>";
         }
         gallery+="</div>";
-        main.innerHTML=gallery;
+        $("#main").html(gallery);
 
-        /*调用设置相册布局对象*/
-        preLoadImages(image).done(function(){
-            IfeAlbum.prototype.setLayout(2);
+        //调用设置相册布局对象
+        ifeAlbum.preLoadImages(image).done(function(){
+            ifeAlbum.setLayout(2);
         });
 
     };
+
 
 
 
@@ -120,9 +106,6 @@
      */
     IfeAlbum.prototype.getImageDomElements = function() {
 
-        var oParent=document.getElementById("gallery");//父级对象
-        return getClassObj(oParent,'picture');//获取存储块框的数组
-
     };
 
 
@@ -131,8 +114,25 @@
      * 向相册添加图片
      * 在拼图布局下，根据图片数量重新计算布局方式；其他布局下向尾部追加图片
      * @param {(string|string[])} image 一张图片的 URL 或多张图片 URL 组成的数组
+     * @param {(string|string[])} addImages 一张图片的 URL 或多张图片 URL 组成的数组，要添加的数组
      */
-    IfeAlbum.prototype.addImage = function (image) {
+    IfeAlbum.prototype.addImage = function (image,addImages) {
+
+        $("#confirmBtn").click(function(){
+            var imgNum=$("#imgNum").val();
+            if(imgNum>0&&imgNum<=addImages.length){
+                for(var i=0;i<imgNum;i++){
+                    image.push(addImages[i]);
+                    $("#imgNum").val("");
+                }
+            }else{
+                for(var j=0;j<addImages.length;j++){
+                    image.push(addImages[j]);
+                    $("#imgNum").val("");
+                }
+            }
+            ifeAlbum.setImage(image);
+        });
 
     };
 
@@ -145,6 +145,21 @@
      */
     IfeAlbum.prototype.removeImage = function (image) {
 
+
+        $("#start").click(function(){
+            var checkbox=$(".checkbox");
+            checkbox.css("display","block");
+        });
+        $("#delete").click(function(){
+            var checkbox=$(".checkbox");
+            for(var i=image.length-1;i>=0;i--){
+                if(checkbox.eq(i).attr("checked")=='checked'){
+                    image.splice(i,1);
+                }
+            }
+            ifeAlbum.setImage(image);
+        });
+
     };
 
 
@@ -154,36 +169,67 @@
      * @param {number} layout 布局值，IfeAlbum.LAYOUT 中的值
      */
     IfeAlbum.prototype.setLayout = function (layout) {
+
+        var gallery=$("#gallery");
+        var pic=$(".pic");
+        var img=$(".pic img");
+
         if(layout==1){
+
+            //拼图布局
+            alert(img.eq(0).attr('src'));
+
 
         }
 
         else if(layout==2){
-
-            /*瀑布布局*/
-            var oParent=document.getElementById("gallery");//父级对象
-            var oPin=IfeAlbum.prototype.getImageDomElements();
-            var oPinW=oPin[0].offsetWidth;//一个块框的宽
-            var num=Math.floor(oParent.offsetWidth/oPinW);//每行中容纳块框个数
-            oParent.style.cssText="width:"+oPinW*num+"px;margin:0 auto";//设置父级元素居中样式，定宽
-            var pinHArr=[];//用于存储每列中的所有块框相加的高度
-            for(var i=0;i<oPin.length;i++){
-                if(i<num){
-                    pinHArr.push(oPin[i].offsetHeight);
-                }else {
-                    var minH=Math.min.apply(null,pinHArr);
-                    var minHIndex=getMinHIndex(pinHArr,minH);
-                    oPin[i].style.position="absolute";
-                    oPin[i].style.top=minH+'px';
-                    oPin[i].style.left=oPin[minHIndex].offsetLeft+'px';
-                    pinHArr[minHIndex]+=oPin[i].offsetHeight;
+            //瀑布布局
+            pic.css({
+                'padding':10,
+                'border':'1px solid #CCC',
+                'border-radius':5,
+                'box-shadow':'0 0 6px #CCC',
+                'float':'left'
+            });
+            $(".pic img").css({
+                'width':165,
+                'height':'auto',
+                'cursor':'pointer'
+            });
+            var picW=pic.eq(0).outerWidth();
+            var num=Math.floor(gallery.outerWidth()/picW);
+            gallery.css({
+                'position':'relative',
+                'width':picW*num,
+                'margin':"0 auto",
+            });
+            var picHArr=[];
+            pic.each(function(index,value){
+                var picH=pic.eq(index).height();
+                if(index<num){
+                    picHArr[index]=picH;
+                }else{
+                    var minH=Math.min.apply(null,picHArr);
+                    var minHIndex= $.inArray(minH,picHArr);
+                    $(value).css({
+                        'position':'absolute',
+                        'top':minH+20,
+                        'left':pic.eq(minHIndex).position().left
+                    });
+                    picHArr[minHIndex]+=pic.eq(index).height()+20;
                 }
-            }
+            });
+
             //可以全屏预览
-            IfeAlbum.prototype.enableFullscreen();
+            ifeAlbum.enableFullscreen();
         }
 
         else if(layout==3){
+
+            //木桶布局
+
+
+
 
         }
 
@@ -209,6 +255,7 @@
      * @param {number} [y] 图片之间的纵向间距，如果是 undefined 则等同于 x
      */
     IfeAlbum.prototype.setGutter = function (x, y) {
+
 
     };
 
@@ -239,20 +286,26 @@
             fullScreen.style.display = "none";
         };
         left.onclick=function(){
-            for(var i=0;i<images.length;i++){
+            for(var i=1;i<images.length;i++){
                 if(curImg.src==images[i].src){
                     fullScreen.style.display = "block";
                     curImg.src=images[i-1].src;
                 }
             }
+            /*if(curImg.src==images[0].src){
+                alert("已经是第1张图片！")
+            }*/
         };
         right.onclick=function(){
-            for(var i=images.length-1;i>=0;i--){
+            for(var i=images.length-2;i>=0;i--){
                 if(curImg.src==images[i].src){
                     fullScreen.style.display = "block";
                     curImg.src=images[i+1].src;
                 }
             }
+            /*if(curImg.src==images[images.length-1].src){
+                alert("已经是最后1张图片！")
+            }*/
         };
 
     };
@@ -263,6 +316,8 @@
      * 禁止点击图片时全屏浏览图片
      */
     IfeAlbum.prototype.disableFullscreen = function () {
+
+
 
     };
 
