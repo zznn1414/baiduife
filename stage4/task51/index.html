@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>多功能相册</title>
     <link type="text/css" rel="stylesheet" href="main.css">
-    <script type="text/css" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/ifeAlbum.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </head>
@@ -14,11 +14,23 @@
     </header>
     <main id="main"></main>
     <aside>
-        <ul>
-            <li><a href="#">拼图布局</a></li>
-            <li><a href="#">瀑布布局</a></li>
-            <li><a href="#">木桶布局</a></li>
-        </ul>
+        <label>Add Images:</label>
+        <input type="text" id="imgNum" value="">
+        <input type="button" id="confirmBtn" value="Confirm">
+        <label>Remove Images:</label>
+        <input type="button" id="start" value="Start">
+        <input type="button" id="delete" value="Delete">
+        <label>Layout type:</label>
+        <input type="button" id="puzzleBtn" value="Puzzle Layout">
+        <input type="button" id="waterfallBtn" value="Waterfall Layout">
+        <input type="button" id="barrelBtn" value="Barrel Layout">
     </aside>
+    <div id="fullScreen">
+        <div class="bg">
+            <input type="button" id="left" value="<">
+            <img src="" alt="">
+            <input type="button" id="right" value=">">
+        </div>
+    </div>
 </body>
 </html>
