@@ -89,7 +89,7 @@
         gallery+="</div>";
         $("#main").html(gallery);
 
-        //调用设置相册布局对象
+        //设置相册默认布局
         ifeAlbum.preLoadImages(image).done(function(){
             ifeAlbum.setLayout(2);
         });
@@ -164,26 +164,26 @@
 
 
 
+
+
+
     /**
      * 设置相册的布局
      * @param {number} layout 布局值，IfeAlbum.LAYOUT 中的值
      */
     IfeAlbum.prototype.setLayout = function (layout) {
 
-        var gallery=$("#gallery");
-        var pic=$(".pic");
-        var img=$(".pic img");
-
         if(layout==1){
 
             //拼图布局
-            alert(img.eq(0).attr('src'));
-
+            $("#gallery").html('');
 
         }
 
         else if(layout==2){
             //瀑布布局
+            var gallery=$("#gallery");
+            var pic=$(".pic");
             pic.css({
                 'padding':10,
                 'border':'1px solid #CCC',
@@ -201,7 +201,7 @@
             gallery.css({
                 'position':'relative',
                 'width':picW*num,
-                'margin':"0 auto",
+                'margin':"0 auto"
             });
             var picHArr=[];
             pic.each(function(index,value){
@@ -226,14 +226,61 @@
 
         else if(layout==3){
 
-            //木桶布局
-
-
 
 
         }
 
+
     };
+
+
+    /**
+     * 木桶布局
+     */
+    IfeAlbum.prototype.barrelLayout = function(image){
+        var container = $('#gallery');
+        container.html('');
+        for(var i=0;i<image.length;i++){
+            var img_1 = $('<img src='+image[i]+'>');
+            img_1.appendTo(container);
+        }
+        var minH = 200;
+        var conWidth = container.width();
+        $("#gallery img").css({'height':minH,'display':'inline-block'});
+
+        var height = 0, tmpWidth = 0, imgWidth = 0;
+        var tmpArr = [];
+        for (var i=0; i<image.length; i++) {
+            var img = $("#gallery img").eq(i);
+            imgWidth = img.width()*img.height()/minH;
+            tmpArr.push(img);
+
+            if(tmpWidth + imgWidth > conWidth) {
+                if(conWidth-tmpWidth < imgWidth/2) {//y>x
+                    height = Math.floor(minH/(tmpWidth + imgWidth) * conWidth);
+                    //重新加载tmpArr   reload(tmpArr, height);
+                    for(var j=0;j<tmpArr.length;j++){
+                        tmpArr[j].css('height',height);
+                    }
+
+                } else if(conWidth-tmpWidth > imgWidth/2){ //y<x
+                    height = Math.floor(minH/tmpWidth * conWidth);
+                    tmpArr.pop();
+                    i = i-1;
+                    //重新加载tmpArr   reload(tmpArr, height);
+                    for(var j=0;j<tmpArr.length;j++){
+                        tmpArr[j].css('height',height);
+                    }
+                }
+                tmpArr = [];
+                tmpWidth = 0;
+            } else {
+                tmpWidth = tmpWidth + imgWidth;
+            }
+        }
+
+    };
+
 
 
 
@@ -241,7 +288,17 @@
      * 获取相册的布局
      * @return {number} 布局枚举类型的值
      */
-    IfeAlbum.prototype.getLayout = function() {
+    IfeAlbum.prototype.getLayout = function(image) {
+
+        $("#puzzleBtn").click(function(){
+            ifeAlbum.setLayout(1);
+        });
+        $("#waterfallBtn").click(function(){
+            ifeAlbum.setImage(image);
+        });
+        $("#barrelBtn").click(function(){
+            ifeAlbum.barrelLayout(image);
+        });
 
     };
 
