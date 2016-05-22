@@ -93,6 +93,7 @@
         ifeAlbum.preLoadImages(image).done(function(){
             ifeAlbum.setLayout(2);
         });
+        $('#addDiv').css('display','none');
 
     };
 
@@ -116,8 +117,11 @@
      * @param {(string|string[])} image 一张图片的 URL 或多张图片 URL 组成的数组
      * @param {(string|string[])} addImages 一张图片的 URL 或多张图片 URL 组成的数组，要添加的数组
      */
-    IfeAlbum.prototype.addImage = function (image,addImages) {
+    IfeAlbum.prototype.addImage = function (image,addImages,layout) {
 
+        if(layout==1){
+
+        }
         $("#confirmBtn").click(function(){
             var imgNum=$("#imgNum").val();
             if(imgNum>0&&imgNum<=addImages.length){
@@ -237,6 +241,7 @@
 
         var gallery = $('#gallery');
         gallery.html('');
+        $("#confirmBtn").unbind('click');
         $("#confirmBtn").click(function(){
             var imgNum = $("#imgNum").val();
             var imgNumArr = [1,2,3,4,5,6];
@@ -359,9 +364,14 @@
         $("#waterfallBtn").click(function(){
             $('#addLabel').text('添加图片');
             $('#deleteDiv').css('display','block');
+            $('#addDiv').css('display','none');
             ifeAlbum.setImage(image);
+            //添加图片
+            ifeAlbum.addImage(photos,addImages);
         });
         $("#barrelBtn").click(function(){
+            $('#deleteDiv').css('display','none');
+            $('#addDiv').css('display','none');
             ifeAlbum.barrelLayout(image);
         });
 
