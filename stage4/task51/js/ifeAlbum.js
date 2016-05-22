@@ -176,7 +176,6 @@
         if(layout==1){
 
             //拼图布局
-            $("#gallery").html('');
 
         }
 
@@ -226,12 +225,77 @@
 
         else if(layout==3){
 
-
-
         }
 
 
     };
+
+    /**
+     * 拼图布局
+     */
+    IfeAlbum.prototype.puzzleLayout=function(image){
+
+        var gallery = $('#gallery');
+        gallery.html('');
+        $("#confirmBtn").unbind('click');
+        $("#confirmBtn").click(function(){
+            var imgNum = $("#imgNum").val();
+            var imgNumArr = [1,2,3,4,5,6];
+            for(var i=0; i<imgNumArr.length; i++){
+                if(imgNum==imgNumArr[i]){
+                    var box = $('<div id="box">');
+                    for(var j=0; j<imgNum; j++){
+                        var html = $('<img src='+image[j]+'>');
+                        html.appendTo(box);
+                    }
+                    gallery.html(box);
+                }
+            }
+            var imgBox = $('#box').css({
+                'width': 600,
+                'height': 400,
+                'margin': '0 auto',
+                'position': 'relative'
+            });
+            var img = $('#gallery img').addClass('items');
+            if(img.length == 1){
+                img.addClass('layout_1');
+            }else if(img.length == 2){
+                imgBox.addClass('layout_2');
+                img.eq(0).addClass('layout_2 items_1');
+                img.eq(1).addClass('layout_2 items_2');
+            }else if(img.length == 3){
+                imgBox.addClass('layout_3');
+                img.eq(0).addClass('layout_3 items_1');
+                img.eq(1).addClass('layout_3 items_2');
+                img.eq(2).addClass('layout_3 items_3');
+            }else if(img.length == 4){
+                imgBox.addClass('layout_4');
+            }else if(img.length == 5){
+                imgBox.addClass('layout_5');
+                img.eq(0).addClass('layout_5 items_1');
+                img.eq(1).addClass('layout_5 items_2');
+                img.eq(2).addClass('layout_5 items_3');
+                img.eq(3).addClass('layout_5 items_4');
+                img.eq(4).addClass('layout_5 items_5');
+            }else if(img.length == 6){
+                imgBox.addClass('layout_6');
+                img.eq(0).addClass('layout_6 items_1');
+                img.eq(1).addClass('layout_6 items_2');
+                img.eq(2).addClass('layout_6 items_3');
+                img.eq(3).addClass('layout_6 items_4');
+                img.eq(4).addClass('layout_6 items_5');
+                img.eq(5).addClass('layout_6 items_6');
+            }else{
+                alert('输入错误，请重新输入！')
+            }
+
+        });
+
+
+    };
+
+
 
 
     /**
@@ -291,7 +355,7 @@
     IfeAlbum.prototype.getLayout = function(image) {
 
         $("#puzzleBtn").click(function(){
-            ifeAlbum.setLayout(1);
+            ifeAlbum.puzzleLayout(image);
         });
         $("#waterfallBtn").click(function(){
             ifeAlbum.setImage(image);
