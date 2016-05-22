@@ -37,8 +37,8 @@ aside input{
     height: 30px;
     background-color: #222;
     border: 1px solid #222;
-    font-family: "Gisha";
-    font-size: 18px;
+    font-family: "微软雅黑";
+    font-size: 16px;
     color: #fff;
     margin-top: 10px;
     margin-left: 20px;
@@ -50,7 +50,7 @@ aside input{
 aside label{
     display: block;
     margin-left: 20px;
-    font-family: "Gisha";
+    font-family: "微软雅黑";
     font-size: 18px;
     font-weight: bold;
     margin-top: 30px;
@@ -100,10 +100,121 @@ aside label{
 }
 
 
+.items{
+    width: 600px;
+    height: 400px
+}
+/*一张图片布局*/
+.layout_1{
+    position: absolute;
+    object-fit: cover;/*元素填满内容区*/
+    overflow: hidden;/*元素溢出内容区时隐藏*/
+}
+/*两张图片布局*/
+.layout_2 .items_1{
+    -webkit-clip-path: polygon(16.66% 0%, 83.33% 0%, 50% 100%,16.66% 100%);
+    clip-path: polygon(16.66% 0%, 83.33% 0%, 50% 100%,16.66% 100%);
+    position: absolute;
+    margin-left: -16.66%;
+}
+.layout_2 .items_2{
+    -webkit-clip-path: polygon(50% 0%, 83.33% 0%, 83.33% 100%,16.66% 100%);
+    clip-path: polygon(50% 0%, 83.33% 0%, 83.33% 100%,16.66% 100%);
+    margin-left: 16.66%;
+}
+/*三张图片布局样式*/
+.layout_3 .items_1{
+    -webkit-clip-path: polygon(16.66% 0%, 83.33% 0%, 83.33% 100%,16.66% 100%);
+    clip-path: polygon(16.66% 0%, 83.33% 0%, 83.33% 100%,16.66% 100%);
+    margin-left: -16.66%;
+}
+.layout_3 .items_2{
+    width: 33.33%;
+    height: 50%;
+    position: absolute;
+    margin-left: -16.66%;
+}
+.layout_3 .items_3{
+    width: 33.33%;
+    height: 50%;
+    position: absolute;
+    margin-left: -16.66%;
+    margin-top: 33.33%;
+}
+/*四张图片布局样式*/
+.layout_4 img {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+/*五张图片布局样式*/
+.layout_5 .items_1{
+    width: 66.66%;
+    height: 66.66%;
+}
+.layout_5 .items_2{
+    width:33.33%;
+    height:50%;
+    position: absolute;
+}
+.layout_5 .items_3{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+}
+.layout_5 .items_4{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 33.33%;
+}
+.layout_5 .items_5{
+    width: 33.33%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+}
 
-
-
-
+/*六张图片布局样式*/
+.layout_6 .items_1{
+    width: 66.66%;
+    height: 66.66%;
+}
+.layout_6 .items_2{
+    width:33.33%;
+    width:33.33%;
+    position: absolute;
+}
+.layout_6 .items_3{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 33.33%;
+}
+.layout_6 .items_4{
+    width:33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+}
+.layout_6 .items_5{
+    width: 33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 33.33%;
+}
+.layout_6 .items_6{
+    width: 33.33%;
+    height:33.33%;
+    position: absolute;
+    top: 66.66%;
+    left: 66.66%;
+}
 
 
 

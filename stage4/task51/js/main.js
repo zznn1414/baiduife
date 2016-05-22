@@ -13,12 +13,13 @@ var addImages=["addImages/img1.jpg","addImages/img2.jpg","addImages/img3.jpg",
 
 window.onload=function(){
     //初始页面
-    ifeAlbum.setImage(photos);
+    ifeAlbum.setImage(photos,null);
     //添加图片
     ifeAlbum.addImage(photos,addImages);
     //删除图片
     ifeAlbum.removeImage(photos);
-
+    //获取布局
+    ifeAlbum.getLayout(photos);
 };
 
 

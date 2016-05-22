@@ -14,16 +14,18 @@
     </header>
     <main id="main"></main>
     <aside>
-        <label>Add Images:</label>
-        <input type="text" id="imgNum" value="">
-        <input type="button" id="confirmBtn" value="Confirm">
-        <label>Remove Images:</label>
-        <input type="button" id="start" value="Start">
-        <input type="button" id="delete" value="Delete">
-        <label>Layout type:</label>
-        <input type="button" id="puzzleBtn" value="Puzzle Layout">
-        <input type="button" id="waterfallBtn" value="Waterfall Layout">
-        <input type="button" id="barrelBtn" value="Barrel Layout">
+        <label>布局类型:</label>
+        <input type="button" id="puzzleBtn" value="拼图布局">
+        <input type="button" id="waterfallBtn" value="瀑布布局">
+        <input type="button" id="barrelBtn" value="木桶布局">
+        <label id="addLabel">添加图片:</label>
+        <input type="text" id="imgNum" value="请输入图片张数" style="font-size: 12px;color: #BABABA" onfocus="value=''">
+        <input type="button" id="confirmBtn" value="确认">
+        <div id="deleteDiv">
+            <label>删除图片:</label>
+            <input type="button" id="start" value="开始">
+            <input type="button" id="delete" value="删除">
+        </div>
     </aside>
     <div id="fullScreen">
         <div class="bg">

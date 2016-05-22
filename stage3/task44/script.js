@@ -27,6 +27,34 @@ function insertImages() {
         oPic.appendChild(oImg);
     }
 }
+
+var preLoadImages=function(image){
+    var newImages=[],loadedImages=0;
+    var postAction=function(){};
+    var arr=(typeof image!="object")?[image]:image;//确保参数总是数组
+    function imageLoadPost(){
+        loadedImages++;
+        if(loadedImages==arr.length){
+            postAction(newImages);
+        }
+    }
+    for(var i=0;i<arr.length;i++){
+        newImages[i]=new Image();
+        newImages[i].src=image[i];
+        newImages[i].onload=function(){
+            imageLoadPost();
+        };
+        newImages[i].onerror=function(){
+            imageLoadPost();
+        }
+    }
+    return {
+        done:function(f){
+            postAction=f||postAction;
+        }
+    }
+};
+
 //封装一个通过类获得对象的方法
 function getByClass(parent,clsName){
     var boxArr=[];
@@ -85,7 +113,11 @@ function checkScrollSlide(){
 //初始化函数
 function init(){
     insertImages();
-    waterfall('main','box');
+
+    preLoadImages(dataInt).done(function(){
+
+        waterfall('main','box');
+    });
     window.onscroll=function(){
         if(checkScrollSlide){
             insertImages();
