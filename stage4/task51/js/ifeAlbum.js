@@ -93,7 +93,6 @@
         ifeAlbum.preLoadImages(image).done(function(){
             ifeAlbum.setLayout(2);
         });
-        $('#addDiv').css('display','none');
 
     };
 
