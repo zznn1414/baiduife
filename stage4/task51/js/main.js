@@ -18,7 +18,7 @@ window.onload=function(){
     ifeAlbum.addImage(photos,addImages);
     //删除图片
     ifeAlbum.removeImage(photos);
-
+    //获取布局
     ifeAlbum.getLayout(photos);
 };
 

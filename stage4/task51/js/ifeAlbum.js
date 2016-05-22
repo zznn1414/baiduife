@@ -237,7 +237,6 @@
 
         var gallery = $('#gallery');
         gallery.html('');
-        $("#confirmBtn").unbind('click');
         $("#confirmBtn").click(function(){
             var imgNum = $("#imgNum").val();
             var imgNumArr = [1,2,3,4,5,6];
@@ -250,11 +249,12 @@
                     }
                     gallery.html(box);
                 }
+                $("#imgNum").val("");
             }
             var imgBox = $('#box').css({
                 'width': 600,
                 'height': 400,
-                'margin': '0 auto',
+                'margin': '40px auto 0',
                 'position': 'relative'
             });
             var img = $('#gallery img').addClass('items');
@@ -286,15 +286,12 @@
                 img.eq(3).addClass('layout_6 items_4');
                 img.eq(4).addClass('layout_6 items_5');
                 img.eq(5).addClass('layout_6 items_6');
-            }else{
-                alert('输入错误，请重新输入！')
             }
 
         });
 
 
     };
-
 
 
 
@@ -355,9 +352,13 @@
     IfeAlbum.prototype.getLayout = function(image) {
 
         $("#puzzleBtn").click(function(){
+            $('#addLabel').text('设定图片张数');
+            $('#deleteDiv').css('display','none');
             ifeAlbum.puzzleLayout(image);
         });
         $("#waterfallBtn").click(function(){
+            $('#addLabel').text('添加图片');
+            $('#deleteDiv').css('display','block');
             ifeAlbum.setImage(image);
         });
         $("#barrelBtn").click(function(){
