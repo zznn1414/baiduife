@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas时钟</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400" style="background: black"></canvas>
+<!--画图-->
+<script>
+    var canvas = document.getElementById('canvas');
+    var cxt = canvas.getContext("2d");
+
+    function clock(){
+        var date = new Date(),
+            h = date.getHours(),
+            m = date.getMinutes(),
+            s = date.getSeconds();
+
+        //清空画布
+        cxt.clearRect(0, 0, canvas.width,canvas.height);
+
+        //外圈圆
+        cxt.beginPath();
+        cxt.arc(200, 200, 148, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#00E3F9';
+        cxt.fill();
+        //内圈圆
+        cxt.beginPath();
+        cxt.arc(200, 200, 140, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#000';
+        cxt.fill();
+        //整点时刻
+        for(var i=0; i<12; i++) {
+            cxt.save();
+            cxt.translate(200, 200);
+            cxt.rotate(i*30 * Math.PI / 180);
+            cxt.beginPath();
+            cxt.rect(-3, -140, 6, 16);
+            cxt.closePath();
+            cxt.fillStyle = '#F2F103';
+            cxt.fill();
+            cxt.restore();
+        }
+        //小刻度
+        for(var i=0; i<60; i++) {
+            cxt.save();
+            cxt.translate(200, 200);
+            cxt.rotate(i*6 * Math.PI / 180);
+            cxt.beginPath();
+            cxt.rect(-3, -140, 3, 7);
+            cxt.closePath();
+            cxt.fillStyle = '#F2F103';
+            cxt.fill();
+            cxt.restore();
+        }
+
+        //时针
+        //时针头
+        cxt.save();
+        cxt.translate(200, 200);
+        cxt.rotate(30*h*Math.PI/180+Math.PI);
+        cxt.beginPath();
+        cxt.arc(0, 0, 8, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#0FD7EE';
+        cxt.fill();
+        //时针主体
+        cxt.beginPath();
+        cxt.rect(-3, 0, 6, 80);
+        cxt.closePath();
+        cxt.fillStyle = '#0FD7EE';
+        cxt.fill();
+        cxt.restore();
+
+        //分针
+        //分针头
+        cxt.save();
+        cxt.translate(200, 200);
+        cxt.rotate(6*m*Math.PI/180+Math.PI);
+        cxt.beginPath();
+        cxt.arc(0, 0, 8, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#F8F945';
+        cxt.fill();
+        //分针主体
+        cxt.beginPath();
+        cxt.rect(-2, 0, 4, 100);
+        cxt.closePath();
+        cxt.fillStyle = '#F8F945';
+        cxt.fill();
+        cxt.restore();
+
+        //秒针
+        //秒针头
+        cxt.save();
+        cxt.translate(200, 200);
+        cxt.rotate(6*s*Math.PI/180+Math.PI);
+        cxt.beginPath();
+        cxt.arc(0, 0, 8, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#BD322D';
+        cxt.fill();
+        //针主体
+        cxt.beginPath();
+        cxt.rect(-1, 0, 2, 120);
+        cxt.closePath();
+        cxt.fillStyle = '#BD322D';
+        cxt.fill();
+        //秒针针尾大圆
+        cxt.beginPath();
+        cxt.arc(0, 100, 6, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#BD322D';
+        cxt.fill();
+        //秒针针尾小圆
+        cxt.beginPath();
+        cxt.arc(0, 100, 4, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#F2F103';
+        cxt.fill();
+        cxt.restore();
+
+        //时钟中心
+        cxt.beginPath();
+        cxt.arc(200, 200, 6, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.fillStyle = '#F2F103';
+        cxt.fill();
+    }
+
+    clock();
+    setInterval(clock,1000);
+
+</script>
+</body>
+</html>
