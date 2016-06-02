@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奥特曼-咸蛋超人</title>
+    <style type="text/css">
+        body{
+            background: #75d8f9;
+        }
+        .ultraman{
+            position: absolute;
+            left: 50%;
+            margin-left: -125px;
+            margin-top: 40px;
+        }
+        /*头部轮廓*/
+        .ultraman header{
+            width: 250px;
+            height: 250px;
+            border: 7px solid #000;
+            border-top: 15px solid #000;
+            border-radius: 50% 50% 60% 60%;
+            background: #fff;
+            position: absolute;
+        }
+        /*头发*/
+        .ultraman header .hair{
+            position: absolute;
+            top: -47px;
+            left: 100px;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 180px solid #000;
+            border-radius: 30% 30% 50% 50%;
+        }
+        /*眼睛*/
+        .ultraman header .left_eye{
+            width: 90px;
+            height: 87px;
+            border: 5px solid #000;
+            background: #ffc30a;
+            border-radius: 50% 80%;
+            transform: rotate(-15deg);
+            position: absolute;
+            top: 70px;
+            left: 10px;
+        }
+        .ultraman header .right_eye{
+            width: 90px;
+            height: 87px;
+            border: 5px solid #000;
+            background: #ffc30a;
+            border-radius: 80% 50%;
+            transform: rotate(15deg);
+            position: absolute;
+            top: 70px;
+            left: 139px;
+        }
+        /*耳朵*/
+        .ultraman header .left_ear{
+            width: 20px;
+            height: 60px;
+            border: 5px solid #000;
+            position: absolute;
+            top: 80px;
+            left: -22px;
+            z-index: -1;
+            transform: rotate(-7deg);
+            background: #fff;
+        }
+        .ultraman header .right_ear{
+            width: 20px;
+            height: 60px;
+            border: 5px solid #000;
+            position: absolute;
+            top: 80px;
+            left: 242px;
+            z-index: -1;
+            transform: rotate(7deg);
+            background: #fff;
+        }
+        /*小身体*/
+        @keyframes jump {
+            0%{
+                background:#48e1e7;
+            }
+            50%{
+                background:#961e1e;
+            }
+            100%{
+                background:#48e1e7;
+            }
+        }
+        .body{
+            width: 110px;
+            height: 65px;
+            background: #fff;
+            border: 7px solid #000;
+            border-radius: 0 0 20% 20%;
+            position: absolute;
+            top: 250px;
+            left: 68px;
+            z-index: -1;
+        }
+        .light{
+            width: 40px;
+            height: 40px;
+            border: 3px solid #000;
+            background: red;
+            position: relative;
+            left: 33px;
+            transform: rotate(-45deg);
+        }
+        .light span{
+            width: 8px;
+            height: 8px;
+            border: 2px solid #000;
+            background: #48e1e7;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 2;
+            left: 2px;
+            top: 26px;
+            animation: jump 0.5s infinite;
+        }
+        /*手*/
+        .left_hand{
+            width: 35px;
+            height: 115px;
+            border: 7px solid #000;
+            border-radius: 60% 60% 50% 50%;
+            background: #fff;
+            position: absolute;
+            left: 40px;
+            top: 200px;
+        }
+        .right_hand{
+            width: 35px;
+            height: 115px;
+            border: 7px solid #000;
+            border-radius: 60% 60% 50% 50%;
+            background: #fff;
+            transform: rotate(-90deg);
+            position: absolute;
+            left: 110px;
+            top: 200px;
+        }
+        /*裤子*/
+        .trousers{
+            width: 108px;
+            height: 25px;
+            background: red;
+            border: 7px solid #000;
+            border-radius: 0 0 15% 15%;;
+            position: absolute;
+            top: 317px;
+            left: 70px;
+            z-index: -2;
+        }
+        .left_footer{
+            width: 100px;
+            height: 35px;
+            border:7px solid #000;
+            border-radius:50% 50% 60% 60%;
+            position:absolute;
+            background:#fff;
+            transform: rotate(120deg);
+            left: 35px;
+            top: 335px;
+            z-index: -3;
+        }
+        .right_footer{
+            width: 100px;
+            height: 35px;
+            border:7px solid #000;
+            border-radius:50% 50% 60% 60%;
+            position:absolute;
+            background:#fff;
+            transform: rotate(50deg);
+            left: 117px;
+            top: 345px;
+            z-index: -3;
+        }
+        .egg{
+            width: 18px;
+            height: 30px;
+            background:#75d8f9;
+            border-radius: 50%;
+            position: absolute;
+            border-top:7px solid #000;
+            top: 343px;
+            left: 120px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="ultraman">
+        <header>
+            <div class="hair"></div>
+            <div class="left_eye"></div>
+            <div class="right_eye"></div>
+            <div class="left_ear"></div>
+            <div class="right_ear"></div>
+        </header>
+        <div class="body">
+            <div class="light"><span></span></div>
+        </div>
+        <div class="left_hand"></div>
+        <div class="right_hand"></div>
+        <div class="trousers"></div>
+        <div class="left_footer"></div>
+        <div class="right_footer"></div>
+        <div class="egg"></div>
+    </div>
+</body>
+</html>

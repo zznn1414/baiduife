@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Bootstrap练习仿慕课网</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--头部-->
+        <!--导航栏-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+        <div class="container-fluid">
+            <!--Brand-->
+            <div class="navbar-header">
+                <a class="navbar-brand" id="brand" href="#">慕课网</a>
+            </div>
+            <!--nav-->
+            <div class="collapse navbar-collapse navbar-left" id="nav">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">课程</a></li>
+                    <li><a href="#">实战</a></li>
+                    <li><a href="#">计划</a></li>
+                    <li><a href="#">猿问</a></li>
+                    <li><a href="#">手记</a></li>
+                </ul>
+            </div>
+            <!--表单-->
+            <div class="navbar-right form-inline" id="form">
+                <div class="form-group">
+                    <label class="sr-only"></label>
+                    <div class="input-group" id="search">
+                        <input type="text" class="form-control" placeholder="请输入想要搜索的内容...">
+                        <div id="input-addon" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                    </div>
+                    <div id="login">
+                        <a href="#" id="phone"><span class="glyphicon glyphicon-phone"></span></a>
+                        <a href="#">登录</a>
+                        <a href="#">注册</a>
+                        <!--phone弹出框-->
+                        <div class="phone">
+                            <div class="arrow"></div>
+                            <div class="content">
+                                <h4>慕课网app下载</h4>
+                                <p>iPhone / Android / iPad</p>
+                                <img src="http://placehold.it/120x120" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <!--轮播图-->
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <a href="#">
+                    <img src="http://placehold.it/1500x700/A4C9D1/000000" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="http://placehold.it/1500x700/ED6F61/000000" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="http://placehold.it/1500x700/142336/000000" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="http://placehold.it/1500x700/87766F/000000" alt="">
+                </a>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--主体-->
+        <!--分隔-->
+    <div class="container">
+        <div class="row"  id="can">
+            <div class="col-md-4 text-center">
+                <canvas id="can1" width="180" height="180"></canvas>
+                <p>专注IT学习</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <canvas id="can2" width="180" height="180"></canvas>
+                <p>聚焦实战开发</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <canvas id="can3" width="180" height="180"></canvas>
+                <p>课程完全免费</p>
+            </div>
+        </div>
+    </div>
+        <!--动画介绍-->
+    <div class="container-fluid">
+        <div class="row row-flash">
+            <div class="col-md-6 text-right">
+                <img src="http://placehold.it/480x400/F0F5F5" alt="">
+            </div>
+            <div class="col-md-6 text-left">
+                <h3>精心制作的视频课程</h3>
+                <p>老师都是技术大牛实战派。课程内容接地气，实际工作用得着。</p>
+            </div>
+        </div>
+        <div class="row row-flash">
+            <div class="col-md-6 col-md-push-6 text-left">
+                <img src="http://placehold.it/480x400/CEB446" alt="">
+            </div>
+            <div class="col-md-6 col-md-pull-6 text-right">
+                <h3>实时交互的在线编程</h3>
+                <p>无需配置任何编程环境，直接就能在线学习编程。省时省力省心。</p>
+            </div>
+        </div>
+        <div class="row row-flash">
+            <div class="col-md-6 text-right">
+                <img src="http://placehold.it/480x400/8CC63F" alt="">
+            </div>
+            <div class="col-md-6 text-left">
+                <h3>循序渐进的学习计划</h3>
+                <p>专注各种学习编程迷茫症。有目标有路径，一切尽在掌握中。</p>
+            </div>
+        </div>
+        <div class="row row-flash">
+            <div class="col-md-6 col-md-push-6 text-left">
+                <img src="http://placehold.it/480x400/608AA6" alt="">
+            </div>
+            <div class="col-md-6 col-md-pull-6 text-right">
+                <h3>互帮互助的问答社区</h3>
+                <p>有问有答有分享。老师学员同交流，高手小白共进步。</p>
+            </div>
+        </div>
+    </div>
+        <!--主要课程-->
+    <div class="lesson">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#"><img src="http://placehold.it/400x200/5C585E" alt=""></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#"><img src="http://placehold.it/400x200/C3FE10" alt=""></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#"><img src="http://placehold.it/400x200/89D7CB" alt=""></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>课程</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/079469" alt=""></a>
+                    <div class="title">
+                        <h5>Android动感系列-摇一摇</h5>
+                        <time>7小时前更新</time>
+                        <span>366人学习</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/153E57" alt=""></a>
+                    <div class="title">
+                        <h5>iOS基础教程-SQLite数据库操作</h5>
+                        <time>23小时前更新</time>
+                        <span>1182人学习</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/531858" alt=""></a>
+                    <div class="title">
+                        <h5>Unity3D菜鸟先飞之NGUI实战篇</h5>
+                        <time>1天前更新</time>
+                        <span>739人学习</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/21B0AA" alt=""></a>
+                    <div class="title">
+                        <h5>全面解析java注解</h5>
+                        <time>3天前更新</time>
+                        <span>46594人学习</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="row" id="lesson2">
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/30393E" alt=""></a>
+                    <div class="title">
+                        <h5>征战Objective-C</h5>
+                        <time>5天前更新</time>
+                        <span>44588人学习</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/5B58FF" alt=""></a>
+                    <div class="title">
+                        <h5>Java高并发秒杀API之高并发优化</h5>
+                        <time>6天前更新</time>
+                        <span>5152人学习</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/FE7237" alt=""></a>
+                    <div class="title">
+                        <h5>在线分布式数据库原理与实践</h5>
+                        <time>6天前更新</time>
+                        <span>23954人学习</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#"><img src="http://placehold.it/280x160/5A8389" alt=""></a>
+                    <div class="title">
+                        <h5>CSS Sprite雪碧图应用</h5>
+                        <time>6天前更新</time>
+                        <span>24620人学习</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-default myBtn">全部课程</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--慕课大家庭-->
+    <div class="images">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div class="bg3"></div>
+        <div class="bg4"></div>
+    </div>
+        <!--手机慕课网-->
+    <div class="phone-lesson">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>手机慕课，随时随地学习</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-default">手机版</button>
+                    <button class="btn btn-default">iPad版</button>
+                    <a href="#"><img src="http://placehold.it/20x20/C24654" alt=""></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="http://placehold.it/760x300/F9A49C" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <!--开始学习-->
+    <div class="begin-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-default">开始学习</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--尾部-->
+
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

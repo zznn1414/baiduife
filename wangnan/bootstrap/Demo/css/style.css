@@ -1,0 +1,241 @@
+body{
+    font-family: "微软雅黑";
+}
+#navbar{
+    height: 60px;
+    background-color: #000;
+    border-color: #000;
+}
+#brand{
+    padding: 20px 20px;
+    font-size: 24px;
+    color: #fff;
+}
+#nav{
+    margin-left: 20px;
+}
+#nav a{
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+#nav a:hover{
+    background: #363C41;
+}
+#search input{
+    width: 230px;
+    background: #000;
+    border: none;
+    box-shadow: none;
+    border-radius: inherit;
+    border-bottom: 1px solid #787D82;
+    outline: none;
+    display: none;
+}
+#search #input-addon{
+    background: rgba(0,0,0,0);
+    border: none;
+    color: #787D82;
+}
+#search #input-addon:hover{
+    color: #fff;
+}
+
+#login{
+    display: inline-block;
+    width: 220px;
+    margin-right: 20px;
+}
+#login a:first-child{
+    margin-left: 15px;
+}
+#login a{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: #787D82;
+    line-height: 60px;
+    text-decoration: none;
+}
+#login a:nth-child(1):hover{
+    color: #fff;
+    background: #363C41;
+}
+#login a:nth-child(2):hover{
+    color: #fff;
+    background: #F01400;
+}
+#login a:nth-child(3):hover{
+    color: #fff;
+    background: #363C41;
+    margin-top: -2px;
+}
+.phone{
+    display: none;
+    position: absolute;
+}
+.phone .arrow{
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    transform: rotate(45deg);
+    margin-left: 38px;
+    margin-top: 2px;
+}
+.phone .content{
+    display: block;
+    width: 180px;
+    height: 220px;
+    background: #fff;
+    text-align: center;
+    margin-top: -8px;
+    margin-left: -35px;
+    padding-top: 10px;
+}
+.phone h4{
+    font-size: 15px;
+    font-weight: bold;
+}
+#carousel{
+    margin-top: 60px;
+}
+#can{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: #656E73;
+}
+.row-flash:nth-child(odd){
+    background: #EEF1F2;
+}
+.row-flash h3{
+    font-size: 36px;
+    color: #656E73;
+    margin-top: 150px;
+}
+.row-flash p{
+    font-size: 18px;
+    color: #949595;
+}
+.lesson{
+    width: 100%;
+    height: 960px;
+    background: #EDEFF0;
+}
+.lesson .row:nth-child(2){
+    padding: 30px;
+    color: #BE3948;
+}
+.lesson .title{
+    width: 280px;
+    height: 80px;
+    background: #fff;
+    margin-top: -10px;
+    box-shadow: 0 0 2px 0 #D3D4D4;
+    padding-top: 15px;
+}
+.lesson img{
+    box-shadow: 0 0 2px 0 #D3D4D4;
+}
+.lesson .title time{
+    display: inline-block;
+    font-size: 12px;
+    color: #C9BBD0;
+    margin-right: 120px;
+}
+.lesson .title span{
+    display: inline-block;
+    font-size: 12px;
+    color: #C9BBD0;
+}
+#lesson2{
+    margin-top: 20px;
+}
+.lesson .row:nth-child(5){
+    padding: 50px;
+}
+.lesson .row:nth-child(5) button{
+    width: 120px;
+    height: 40px;
+    background: #EDEFF0;
+    border: 1px solid #D2D8DA;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+}
+.lesson .row:nth-child(5) button:hover{
+    background: #D2D8DA;
+}
+.bg1{
+    width: 1349px;
+    height: 100px;
+    background: #838689;
+}
+.bg2{
+    width: 1349px;
+    height: 100px;
+    background: #8F9295;
+}
+.bg3{
+    width: 1349px;
+    height: 100px;
+    background: #A7AAAE;
+}
+.bg4{
+    width: 1349px;
+    height: 100px;
+    background: #838689;
+}
+.phone-lesson{
+    height: 580px;
+    color: #C24654;
+}
+.phone-lesson .row:nth-child(1){
+    margin-top: 80px;
+}
+.phone-lesson .row:nth-child(2){
+    margin-top: 30px;
+}
+.phone-lesson .row:nth-child(2) button{
+    width: 160px;
+    height: 40px;
+    border: 1px solid #C24654;
+    background: #fff;
+    border-radius: 20px;
+    color: #C24654;
+    margin-right: 20px;
+    outline: none;
+}
+.phone-lesson .row:nth-child(2) button:hover{
+    background: #C24654;
+    color: #fff;
+}
+.phone-lesson .row:nth-child(3){
+    margin-top: 70px;
+}
+.begin-start{
+    height: 360px;
+    background: #EEF1F2;
+}
+.begin-start .row:nth-child(1) button{
+    width: 220px;
+    height: 60px;
+    background: #BE3948;
+    border-radius: 30px;
+    margin-top: 70px;
+    font-size: 20px;
+    color: #fff;
+    outline: none;
+}
+.begin-start .row:nth-child(1)  button:hover{
+    background: #BE3930;
+    color: #fff;
+}
+
+
+
+
+
